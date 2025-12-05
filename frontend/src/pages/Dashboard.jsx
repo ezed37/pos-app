@@ -103,22 +103,17 @@ export default function Dashboard() {
     return { date: dateStr, sales: total };
   });
 
-  const todayCost = todaySales.map((s) => {
-    const itemCost = s.items;
-    const totalCost = itemCost.map((item) => item.qty * item.cost_price);
-    return totalCost;
-  });
+  const todayCost = todaySales
+    .flatMap((s) => s.items)
+    .reduce((sum, item) => sum + item.qty * item.cost_price, 0);
 
   const todayRevenue = totalToday - todayCost;
 
-  const monthCost = monthSales.map((s) => {
-    const itemCost = s.items;
-    const totalCost = itemCost.map((item) => item.qty * item.cost_price);
-    const total = totalCost.flat().reduce((sum, val) => sum + val, 0);
-    return total;
-  });
+  const monthCost = monthSales
+    .flatMap((s) => s.items)
+    .reduce((sum, item) => sum + item.qty * item.cost_price, 0);
 
-  const monthRevenue = totalMonth - monthCost || 0;
+  const monthRevenue = totalMonth - monthCost;
 
   return (
     <Box p={3}>
