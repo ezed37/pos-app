@@ -269,7 +269,7 @@ export default function Sales() {
                   <TableCell>
                     {new Date(s.createdAt).toISOString().split("T")[0]}
                   </TableCell>
-                  <TableCell align="center">{filteredSales.length}</TableCell>
+                  <TableCell align="center">{viewSale?.items.length}</TableCell>
                   <TableCell align="center">{s.payment_type}</TableCell>
                   <TableCell align="center">{s.final_total}</TableCell>
                   <TableCell>
