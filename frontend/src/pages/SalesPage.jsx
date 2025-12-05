@@ -398,7 +398,14 @@ export default function CashierSalePage({ toggleMode, currentMode, user }) {
         </Grid>
 
         {/* Cart Section */}
-        <Grid sx={{ display: "flex", flexDirection: "column", height: "90vh" }}>
+        <Grid
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "90vh",
+            minWidth: "500px",
+          }}
+        >
           <Typography variant="h6" mb={0}>
             Cart
           </Typography>
