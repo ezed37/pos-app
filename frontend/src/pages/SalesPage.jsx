@@ -198,7 +198,7 @@ export default function CashierSalePage({ toggleMode, currentMode, user }) {
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.ctrlKey && e.key === "Enter") {
+      if (e.ctrlKey && e.key === "Shift") {
         e.preventDefault();
         if (cart.length === 0) {
           alert("Cart is empty!");
