@@ -38,6 +38,6 @@ app.listen(PORT, async () => {
     console.log(`🚀 Server is running on PORT ${PORT}`);
   } catch (error) {
     console.error("❌ Database connection failed:", error.message);
-    process.exit(1); // Exit if DB connection fails
+    process.exit(1);
   }
 });
