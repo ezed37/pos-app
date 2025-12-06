@@ -139,7 +139,7 @@ export default function Dashboard() {
           <Paper sx={cardStyles.todayRevenue}>
             <Typography variant="h6">Total Revenue (Today)</Typography>
             <Typography variant="h3" fontWeight="bold">
-              Rs {todayRevenue}
+              Rs {todayRevenue.toFixed(2)}
             </Typography>
           </Paper>
         </Grid>
@@ -191,7 +191,7 @@ export default function Dashboard() {
           <Paper sx={cardStyles.smallBlue}>
             <Typography variant="body2">Revenue (Month)</Typography>
             <Typography variant="h5" fontWeight="bold">
-              Rs {monthRevenue}
+              Rs {monthRevenue.toFixed(2)}
             </Typography>
           </Paper>
         </Grid>
