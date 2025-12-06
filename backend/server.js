@@ -32,12 +32,16 @@ app.get("/", (req, res) => {
   res.send("POS Backend is running!");
 });
 
-app.listen(PORT, async () => {
+const startServer = async () => {
   try {
     await connectDb();
-    console.log(`🚀 Server is running on PORT ${PORT}`);
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on PORT ${PORT}`);
+    });
   } catch (error) {
     console.error("❌ Database connection failed:", error.message);
     process.exit(1);
   }
-});
+};
+
+startServer();
