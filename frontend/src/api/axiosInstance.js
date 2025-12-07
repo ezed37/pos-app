@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://pos-app-front-en4d.onrender.com/api",
+  baseURL: "https://pos-app-back-65bg.onrender.com/api",
 });
 
 // Attach token automatically

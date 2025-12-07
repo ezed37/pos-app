@@ -35,10 +35,13 @@ function Login() {
     if (Object.keys(newErrors).length > 0) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/login", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "https://pos-app-back-65bg.onrender.com/api/users/login",
+        {
+          username,
+          password,
+        }
+      );
       login(res.data.token);
       navigate("/");
     } catch (err) {
